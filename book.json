@@ -1,0 +1,18 @@
+{
+  "title": "QOR Guides",
+  "plugins": [
+    "github", "edit-link", "new-flowchart", "etoc", "collapsible-menu"
+  ],
+  "pluginsConfig": {
+    "fontsettings": {
+      "size": 2
+    },
+    "github": {
+      "url": "https://github.com/conku"
+    },
+    "edit-link": {
+      "base": "https://github.com/conku/doc/edit/master",
+      "label": "Edit This Page"
+    }
+  }
+}

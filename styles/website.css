@@ -1,0 +1,13 @@
+.summary > li > a, .summary > li > span {
+  font-weight: 700;
+}
+
+.summary > li[data-level="1.13"] {
+  display: none !important;
+}
+
+.toc {
+  margin-bottom: 1em;
+  width: 100%;
+  padding: 1em;
+}
