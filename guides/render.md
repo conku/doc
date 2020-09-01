@@ -7,7 +7,7 @@ Render provides handy controls when rendering templates.
 ### Initialize [Render](https://github.com/conku/render2)
 
 ```go
-import "github.com/conku/render2"
+import "github.com/conku/render"
 
 func main() {
   Render := render.New(&render.Config{
