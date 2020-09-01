@@ -78,10 +78,10 @@ func main() {
 }
 ```
 
-### Use BindataFS with [QOR Render](https://github.com/conku/render)
+### Use BindataFS with [QOR Render](https://github.com/conku/render2)
 
 ```go
-import  "github.com/conku/render"
+import  "github.com/conku/render2"
 
 func main() {
   View := render.New()

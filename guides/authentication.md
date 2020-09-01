@@ -111,7 +111,7 @@ But usually your application will have a `User` model, after you set its value, 
 
 ### Customize views
 
-Auth using [Render](http://github.com/conku/render) to render pages, you could refer it for how to register func maps, extend views paths, also be sure to refer [BindataFS](https://github.com/conku/bindatafs) if you want to compile your application into a binary.
+Auth using [Render](http://github.com/conku/render2) to render pages, you could refer it for how to register func maps, extend views paths, also be sure to refer [BindataFS](https://github.com/conku/bindatafs) if you want to compile your application into a binary.
 
 If you want to preprend view paths, you could add them to `ViewPaths`, which would be helpful if you want to overwrite the default (ugly) login/register pages or develop auth themes like [https://github.com/conku/auth_themes](https://github.com/conku/auth_themes)
 

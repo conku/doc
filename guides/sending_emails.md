@@ -48,7 +48,7 @@ func main() {
 
 ### Sending Emails with templates
 
-Mailer is using [Render](github.com/conku/render) to render email templates and layouts, please refer it for How-To.
+Mailer is using [Render](github.com/conku/render2) to render email templates and layouts, please refer it for How-To.
 
 Emails could have HTML and text version, when sending emails,
 
