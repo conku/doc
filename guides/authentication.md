@@ -10,9 +10,9 @@ Auth aims to provide an easy to use authentication system that don't require muc
 
 To use it, basic flow is:
 
-* Initialize Auth with configuration
-* Register some providers
-* Register it into router
+- Initialize Auth with configuration
+- Register some providers
+- Register it into router
 
 Here is an example:
 
@@ -26,7 +26,7 @@ import (
   "github.com/conku/auth/providers/facebook"
   "github.com/conku/auth/providers/twitter"
   "github.com/conku/session/manager"
-  "github.com/jinzhu/gorm”
+  "github.com/conku/gorm”
 )
 
 var (
@@ -97,13 +97,13 @@ The reason we save auth and user info into two different models, as we want to b
 
 If this is not required for you, you could just set those two models to same one or skip set `UserModel`.
 
-* `AuthIdentityModel`
+- `AuthIdentityModel`
 
 Different provider usually use different information to login, like provider `password` use username/password, `github` use github user ID, so for each provider, it will save those information into its own record.
 
 You are not necessary to set `AuthIdentityModel`, Auth has a default [definition of AuthIdentityModel](http://godoc.org/github.com/conku/auth/auth_identity#AuthIdentity), in case of you want to change it, make sure you have [auth_identity.Basic](http://godoc.org/github.com/conku/auth/auth_identity#Basic) embedded, as `Auth` assume you have same data structure in your database, so it could query/create records with SQL.
 
-* `UserModel`
+- `UserModel`
 
 By default, there is no `UserModel` defined, even though, you still be able to use `Auth` features, `Auth` will return used auth info record as logged user.
 

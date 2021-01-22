@@ -12,8 +12,8 @@ import (
   "net/http"
   "github.com/conku/qor"
   "github.com/conku/admin"
-  "github.com/jinzhu/gorm"
-  _ "github.com/jinzhu/gorm/dialects/sqlite"
+  "github.com/conku/gorm"
+  _ "github.com/conku/gorm/dialects/sqlite"
 )
 
 // Define a GORM-backend model
@@ -56,8 +56,8 @@ Now, execute `go get -u ./...` to install the dependencies, then run `go run mai
 
 ## Live Demo
 
-* Live Demo http://demo.getqor.com/admin
-* Source Code of Live Demo https://github.com/conku/qor-example
+- Live Demo http://demo.getqor.com/admin
+- Source Code of Live Demo https://github.com/conku/qor-example
 
 ## Next Steps
 

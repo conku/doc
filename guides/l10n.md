@@ -1,16 +1,16 @@
 # L10n
 
-L10n gives your [GORM](https://github.com/jinzhu/gorm) models the ability to localize for different Locales. It can be a catalyst for the adaptation of a product, application, or document content to meet the language, cultural, and other requirements of a specific target market.
+L10n gives your [GORM](https://github.com/conku/gorm) models the ability to localize for different Locales. It can be a catalyst for the adaptation of a product, application, or document content to meet the language, cultural, and other requirements of a specific target market.
 
 [![GoDoc](https://godoc.org/github.com/conku/l10n?status.svg)](https://godoc.org/github.com/conku/l10n)
 
 ## Usage
 
-L10n utilizes [GORM](https://github.com/jinzhu/gorm) callbacks to handle localization, so you will need to register callbacks first:
+L10n utilizes [GORM](https://github.com/conku/gorm) callbacks to handle localization, so you will need to register callbacks first:
 
 ```go
 import (
-  "github.com/jinzhu/gorm"
+  "github.com/conku/gorm"
   "github.com/conku/l10n"
 )
 
@@ -33,7 +33,7 @@ type Product struct {
 }
 ```
 
-`l10n.Locale` will add a `language_code` column as a composite primary key with existing primary keys, using [GORM](https://github.com/jinzhu/gorm)'s AutoMigrate to create the field.
+`l10n.Locale` will add a `language_code` column as a composite primary key with existing primary keys, using [GORM](https://github.com/conku/gorm)'s AutoMigrate to create the field.
 
 The `language_code` column will be used to save a localized model's Locale. If no Locale is set, then the global default Locale (`en-US`) will be used. You can override the global default Locale by setting `l10n.Global`, for example:
 
@@ -76,7 +76,7 @@ type Product struct {
 
 ### Keeping localized resources' fields in sync
 
-Add the tag `l10n:"sync"` to the fields that you wish to always sync with the *global* record:
+Add the tag `l10n:"sync"` to the fields that you wish to always sync with the _global_ record:
 
 ```go
 type Product struct {
@@ -93,11 +93,11 @@ Now the localized product's `Code` will be the same as the global product's `Cod
 
 L10n provides 5 modes for querying.
 
-* global   - find all global records,
-* locale   - find localized records,
-* reverse  - find global records that haven't been localized,
-* unscoped - raw query, won't auto add `locale` conditions when querying,
-* default  - find localized record, if not found, return the global one.
+- global - find all global records,
+- locale - find localized records,
+- reverse - find global records that haven't been localized,
+- unscoped - raw query, won't auto add `locale` conditions when querying,
+- default - find localized record, if not found, return the global one.
 
 You can specify the mode in this way:
 
@@ -121,7 +121,7 @@ Although L10n could be used alone, it integrates nicely with [QOR](https://githu
 
 By default, [QOR](https://github.com/conku/qor) will only allow you to manage the global language. If you have configured [Authentication](http://doc.getqor.com/admin/authentication.html), [QOR Admin](http://github.com/conku/admin) will try to obtain the allowed Locales from the current user.
 
-* Viewable Locales - Locales for which the current user has read permission:
+- Viewable Locales - Locales for which the current user has read permission:
 
 ```go
 func (user User) ViewableLocales() []string {
@@ -129,7 +129,7 @@ func (user User) ViewableLocales() []string {
 }
 ```
 
-* <a name='editable-locales'></a> Editable Locales - Locales for which the current user has manage (create/update/delete) permission:
+- <a name='editable-locales'></a> Editable Locales - Locales for which the current user has manage (create/update/delete) permission:
 
 ```go
 func (user User) EditableLocales() []string {

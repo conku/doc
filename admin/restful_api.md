@@ -17,11 +17,11 @@ func main() {
 
 Once you have your `user` resource defined, QOR Admin will generate RESTFul API for it:
 
-* GET /api/users - Retrieves a list of users
-* GET /api/users/12 - Retrieves a specific user
-* POST /api/users - Creates a new user
-* PUT /api/users/12 - Updates user #12
-* DELETE /api/users/12 - Deletes user #12
+- GET /api/users - Retrieves a list of users
+- GET /api/users/12 - Retrieves a specific user
+- POST /api/users - Creates a new user
+- PUT /api/users/12 - Updates user #12
+- DELETE /api/users/12 - Deletes user #12
 
 Request API with a `.json` extension, like `/api/users.json`, `QOR Admin` will return JSON formated data, request with extension `.xml` (`/api/users.xml`) will return data in XML strucutre.
 
@@ -70,12 +70,12 @@ user.Action(&admin.Action{
 
 It will generate API like:
 
-* PUT /api/users/12/enable  - enable user #12
-* PUT /api/users/12/disable - disable user #12
+- PUT /api/users/12/enable - enable user #12
+- PUT /api/users/12/disable - disable user #12
 
 ## Nested API
 
-You have to have valid [GORM](http://github.com/jinzhu/gorm) relationship to register nested resource, for example:
+You have to have valid [GORM](http://github.com/conku/gorm) relationship to register nested resource, for example:
 
 ```go
 type User struct {
@@ -99,11 +99,11 @@ userOrders, _ := user.AddSubResource("Orders")
 
 Which will generate API:
 
-* GET /api/users/12/orders       - Retrieves a list of orders from user #12
-* GET /api/users/12/orders/22    - Retrieves order #22 from user #12
-* POST /api/users/12/orders      - Creates a new order for user #12
-* PUT /api/users/12/orders/22    - Updates user #12's orders #22
-* DELETE /api/users/12/orders/22 - Deletes users #12's orders #22
+- GET /api/users/12/orders - Retrieves a list of orders from user #12
+- GET /api/users/12/orders/22 - Retrieves order #22 from user #12
+- POST /api/users/12/orders - Creates a new order for user #12
+- PUT /api/users/12/orders/22 - Updates user #12's orders #22
+- DELETE /api/users/12/orders/22 - Deletes users #12's orders #22
 
 If orders #22 doesn't belong to user #12, API will return a `404 Not Found` error
 

@@ -10,7 +10,7 @@ Initialize I18n with the storage mode. You can use both storages together, the e
 
 ```go
 import (
-  "github.com/jinzhu/gorm"
+  "github.com/conku/gorm"
   "github.com/conku/i18n"
   "github.com/conku/i18n/backends/database"
   "github.com/conku/i18n/backends/yaml"
@@ -32,7 +32,7 @@ func main() {
 Once a database has been set for I18n, all **untranslated** translations inside `I18n.T()` will be loaded into `translations` table in the database when compiling the application. For example, we have an untranslated `I18n.T("en-US", "demo.greeting")` in the example, so I18n will generate this record in the `translations` table after compiling.
 
 | locale | key           | value  |
-| ---    | ---           | ---    |
+| ------ | ------------- | ------ |
 | en-US  | demo.greeting | &nbsp; |
 
 The YAML file format is
@@ -40,7 +40,7 @@ The YAML file format is
 ```yaml
 en-US:
   demo:
-    hello: "Hello, world"
+    hello: 'Hello, world'
 ```
 
 ### Use built-in interface for translation management with [QOR Admin](http://github.com/conku/admin)
@@ -106,7 +106,7 @@ i18n.AddTranslation(&Translation{Key: "hello-world", Locale: "en-GB", Value: "He
 fmt.Print(i18n.Fallbacks("en-GB").T("zh-CN", "hello-world")) // "Hello World"
 ```
 
-**To set fallback [*Locale*](https://en.wikipedia.org/wiki/Locale_(computer_software)) globally** you can use `I18n.FallbackLocales`. This function accepts a `map[string][]string` as parameter. The key is the fallback *Locale* and the `[]string` is the *Locales* that could fallback to the first *Locale*.
+**To set fallback [_Locale_](<https://en.wikipedia.org/wiki/Locale_(computer_software)>) globally** you can use `I18n.FallbackLocales`. This function accepts a `map[string][]string` as parameter. The key is the fallback _Locale_ and the `[]string` is the _Locales_ that could fallback to the first _Locale_.
 
 For example, setting `"fr-FR", "de-DE", "zh-CN"` fallback to `en-GB` globally:
 
@@ -146,9 +146,9 @@ I18n.T("en-US", "ordered_params", "string1", "string2") //=> string1 string2 str
 
 ### Inline Edit
 
-You could manage translations' data with [QOR Admin](http://github.com/conku/admin) interface (UI) after registering it into [QOR Admin](http://github.com/conku/admin), however we warn you that it is usually quite hard (and error prone!) to *translate a translation* without knowing its context...Fortunately, the *Inline Edit* feature of [QOR Admin](http://github.com/conku/admin) was developed to resolve this problem!
+You could manage translations' data with [QOR Admin](http://github.com/conku/admin) interface (UI) after registering it into [QOR Admin](http://github.com/conku/admin), however we warn you that it is usually quite hard (and error prone!) to _translate a translation_ without knowing its context...Fortunately, the _Inline Edit_ feature of [QOR Admin](http://github.com/conku/admin) was developed to resolve this problem!
 
-*Inline Edit* allows administrators to manage translations from the frontend. Similarly to [integrating with Golang Templates](#integrate-with-golang-templates), you need to register a func map for Golang templates to render *inline editable* translations.
+_Inline Edit_ allows administrators to manage translations from the frontend. Similarly to [integrating with Golang Templates](#integrate-with-golang-templates), you need to register a func map for Golang templates to render _inline editable_ translations.
 
 The good thing is we have created a package for you to do this easily, it will generate a `FuncMap`, you just need to use it when parsing your templates:
 
