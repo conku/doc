@@ -125,7 +125,7 @@ type User struct {
 
 I18n.AddTranslation(&i18n.Translation{Key: "hello", Locale: "en-US", Value: "Hello {{.Name}}"})
 
-I18n.T("en-US", "hello", User{Name: "Jinzhu"}) //=> Hello Jinzhu
+I18n.T("en-US", "hello", User{Name: "conku"}) //=> Hello conku
 ```
 
 ### Pluralization

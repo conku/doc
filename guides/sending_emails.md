@@ -36,8 +36,8 @@ import "net/mail"
 
 func main() {
 	Mailer.Send(mailer.Email{
-		TO:          []mail.Address{{Address: "jinzhu@example.org", Name: "jinzhu"}},
-		From:        &mail.Address{Address: "jinzhu@example.org"},
+		TO:          []mail.Address{{Address: "conku@example.org", Name: "conku"}},
+		From:        &mail.Address{Address: "conku@example.org"},
 		Subject:     "subject",
 		Text:        "text email",
 		HTML:        "html email <img src='cid:logo.png'/>",

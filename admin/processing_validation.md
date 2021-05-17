@@ -4,11 +4,11 @@
 
 ### Application Level Validations
 
-  If you want to have some global validations for your application, you could use [QOR Validation](https://github.com/conku/validations), it is a GORM extension, it could be used to validate models when creating, updating.
+If you want to have some global validations for your application, you could use [QOR Validation](https://github.com/conku/validations), it is a GORM extension, it could be used to validate models when creating, updating.
 
 ### Admin Level Validations
 
-  If you only want to validate data from QOR Admin, `QOR Admin Validator` is for you, it will check data before decode form/JSON data to the struct.
+If you only want to validate data from QOR Admin, `QOR Admin Validator` is for you, it will check data before decode form/JSON data to the struct.
 
 ```go
 store := Admin.AddResource(&Store{})
@@ -31,11 +31,11 @@ store.AddValidator(&resource.Validator{
 
 ### Application Level Processor
 
-  If you want to process some data before saving it into the database, and have it globally, [GORM callbacks](http://jinzhu.me/gorm/callbacks.html) is perfect for your case.
+If you want to process some data before saving it into the database, and have it globally, [GORM callbacks](http://conku.me/gorm/callbacks.html) is perfect for your case.
 
 ### Admin Level Processor
 
-  But when you only want to process data that from QOR Admin, you can use `QOR Admin Processor`, it can process data after decoding them into the struct, but before saving them into the database, use it like:
+But when you only want to process data that from QOR Admin, you can use `QOR Admin Processor`, it can process data after decoding them into the struct, but before saving them into the database, use it like:
 
 ```go
 store.AddProcessor(&resource.Processor{
